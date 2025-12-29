@@ -138,7 +138,9 @@ How Does Natural Language Processing (NLP) Work?
 
 Step 1. Data Preprocessing:
 
-Stemming and lemmatization: Stemming is an informal process of converting words to their base forms using heuristic rules. For example, “university,” “universities,” and “university’s” might all be mapped to the base univers. emmatization is a more formal way to find roots by analyzing a word’s morphology using vocabulary from a dictionary. Stemming and lemmatization are provided by libraries like spaCy and NLTK. 
+Stemming and lemmatization: 
+
+Stemming is an informal process of converting words to their base forms using heuristic rules. For example, “university,” “universities,” and “university’s” might all be mapped to the base univers. emmatization is a more formal way to find roots by analyzing a word’s morphology using vocabulary from a dictionary. Stemming and lemmatization are provided by libraries like spaCy and NLTK. 
 
 
 Sentence segmentation breaks a large piece of text into linguistically meaningful sentence units. This is obvious in languages like English, where the end of a sentence is marked by a period, but it is still not trivial. 
@@ -148,7 +150,10 @@ Stop word removal aims to remove the most commonly occurring words that don’t 
 Tokenization splits text into individual words and word fragments. The result generally consists of a word index and tokenized text in which words may be represented as numerical tokens for use in various deep learning methods. 
 
 
-Feature extraction: Most conventional machine-learning techniques work on the features – generally numbers that describe a document in relation to the corpus that contains it – 
+
+Feature extraction: 
+
+Most conventional machine-learning techniques work on the features – generally numbers that describe a document in relation to the corpus that contains it – 
 
 Bag-of-Words: Bag-of-Words counts the number of times each word or n-gram (combination of n words) appears in a document. For example, below, the Bag-of-Words model creates a numerical representation of the dataset based on how many of each word in the word_index occur in the document. 
 
@@ -169,6 +174,7 @@ GLoVE is similar to Word2Vec as it also learns word embeddings, but it does so b
 
 Step 2: Modeling
 
+
 After data is preprocessed, it is fed into an NLP architecture that models the data to accomplish a variety of tasks.
 
 Language Models: In very basic terms, the objective of a language model is to predict the next word when given a stream of input words. Probabilistic models that use Markov assumption are one example:
@@ -187,3 +193,39 @@ and predicts based on which joint distribution has the highest probability. The 
 P(text|label) = P(word_1|label)*P(word_2|label)*…P(word_n|label)
 
 In NLP, such statistical methods can be applied to solve problems such as spam detection or finding bugs in software code. 
+
+
+Decision trees are a class of supervised classification models that split the dataset based on different features to maximize information gain in those splits
+
+Deep Learning Techniques:
+Convolutional Neural Networks: See a document as an image. However, instead of pixels, the input is sentences or documents represented as a matrix of words.
+
+
+Recurrant Neural Networks: CNNs don’t learn the sequential structure of the data, where every word is dependent on the previous word or a word in the previous sentence. RNNs remember previous information using hidden states and connect it to the current task. 
+
+Auto Encoder, Encoder Decoder etc. 
+
+Transformers: The transformer, a model architecture first described in the 2017 paper “Attention Is All You Need” (Vaswani, Shazeer, Parmar, et al.), forgoes recurrence and instead relies entirely on a self-attention mechanism to draw global dependencies between input and output. Since this mechanism processes all words at once (instead of one at a time) that decreases training speed and inference cost compared to RNNs, especially since it is parallelizable. The transformer architecture has revolutionized NLP in recent years, leading to models including BLOOM, Jurassic-X, and Turing-NLG. It has also been successfully applied to a variety of different vision tasks, including making 3D images.
+
+
+
+What to use:
+Pytorch, TensorFlow, Python - Spacy, Natural Language Toolkit
+
+
+Course 2: Complete guide towards neural networks
+https://towardsdatascience.com/neural-networks-intuitively-and-exhaustively-explained-0153f85c1007/
+
+
+Neural networks take direct inspiration from the human brain, which is made up of billions of incredibly complex cells called neurons.
+
+A neural network is made up of elements called "perceptrons", which are directly inspired by neurons.
+
+Since these perceptrons always have a linear relationship, the neural network usually has linearity issues. To counter this, you introduce an activation function that introduces non linearity into the model.
+
+In AI there are many popular activation functions, but the industry has largely converged on three popular ones: ReLU, Sigmoid, and Softmax, which are used in a variety of different applications. ReLu is the most popular one.
+
+Model training:
+Weights are adjusted so that our model starts giving responses closer to what is desired.
+
+---> Folder 2:Neural_Network: Implementing Neural Network from Scratch
